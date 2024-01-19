@@ -20,7 +20,7 @@ class GetRequester:
 
         if response_body is not None:
             try:
-                json_data = response_body.json()
+                json_data = json.loads(response_body)
                 return json_data
             except ValueError as e:
                 print(f"Error decoding JSON: {e}")
